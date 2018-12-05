@@ -1,10 +1,11 @@
 $(document).ready(() => {
 
+console.log('Hello world');
 
 
 
 
-console.log('hello World');
+
 
 
 });

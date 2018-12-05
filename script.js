@@ -4,8 +4,4 @@ console.log('Hello world');
 
 
 
-
-
-
-
 });

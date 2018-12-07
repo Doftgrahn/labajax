@@ -18,8 +18,8 @@ $(document).ready(() => {
   });
 
   function whenAjaxDone(data) {
-    let newData = data.key;
-    $outputDivKey.append($('#receviedKey').text(data));
+    let newData = JSON.parse(data);
+    $outputDivKey.append($('#receviedKey').text(newData.key));
     console.log('Server returned!');
   };
 
@@ -29,9 +29,8 @@ $(document).ready(() => {
   };
 
   function onSucces(data) {
-    console.log('server send!');
+    console.log('server sent!');
   };
-
 
 
 

@@ -1,0 +1,36 @@
+body {
+  font-family: helvetica;
+  margin: 0;
+  background-color: lightblue;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+main {
+  height: 200px;
+  border: 2px solid black;
+  background-color: gray;
+}
+#receviedKey {
+  border:1px solid black;
+  display: inline-block;
+  background-color:tomato;
+}
+
+
+footer {
+  height:100px;
+  width:100%;
+  background-color: pink;
+  position:absolute;
+  bottom:0;
+
+
+
+}

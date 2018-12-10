@@ -6,7 +6,9 @@
   <title>AjaxLAB</title>
   <link rel="stylesheet" href="index.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="scriptAPIKEY.js"></script>
+  <script src="addBook.js"></script>
+
   <!-- https://www.forverkliga.se/JavaScript/api/crud.php -->
 </head>
 
@@ -25,9 +27,19 @@
 
   </main>
 
-  <ul class="book-list">
+<div class="addBook-container">
 
-  </ul>
+
+<input type="text" placeholder="Title" id="title"><br>
+<input type="text" placeholder="Author" id="author"><br>
+<button id="addBooksButton">Add Book</button><br>
+
+
+<ul class="addedItems"></ul>
+
+</div>
+
+
 
 
 

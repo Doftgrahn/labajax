@@ -2,6 +2,7 @@ body {
   font-family: helvetica;
   margin: 0;
   background-color: lightblue;
+  border:1px solid black;
 }
 
 h1 {
@@ -10,18 +11,36 @@ h1 {
 
 p {
   text-align: center;
+
+}
+button {
+  margin:5px;
+  margin-left: 200px;
+  padding:5px;
+  border:1px solid black;
+
 }
 
 main {
   height: 200px;
   border: 2px solid black;
 }
+input {
+  margin:5px;
+  margin-left: 200px;
+  padding:4px;
+  border:1px solid black;
+
+}
 ul {
   display:inline;
+
 }
 
 li {
   background-color:tomato;
+  border-radius:10px;
+  box-shadow: 10px 10px black;
 }
 
 #receviedKey {
@@ -36,19 +55,26 @@ li {
 .addBook-container {
   height: 200px;
   padding: 20px;
-  background-color: gray;
+  background-color: gray
+  border:1px solid black;
+
 }
 
 .view-books-container {
   height: 300px;
   border: 1px solid black;
   background-color: lightblue;
+  border:1px solid black;
+
+}
+.modifyBooks{
+  background-color:gray;
+  height:300px;
+  border:1px solid black;
+
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: pink;
+.deletebook {
+  height:200px;
+  background-color:tomato;
 }

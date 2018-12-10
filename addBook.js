@@ -36,7 +36,6 @@ $(document).ready(() => {
     };
 
   $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
-    console.log(data);
   };
 
   function whenAjaxfail(error) {

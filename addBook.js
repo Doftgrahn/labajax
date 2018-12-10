@@ -30,16 +30,12 @@ $(document).ready(() => {
   });
 
   function whenAjaxPost(data) {
-
-
     let bookID = {
       title: $title.val(),
       author: $author.val()
     };
 
-
-
-    $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
+  $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
     console.log(data);
   };
 

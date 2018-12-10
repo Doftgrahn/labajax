@@ -10,32 +10,24 @@ $(document).ready(() => {
       method: 'GET',
       data: {
         op: 'select',
-        key: apiKey
+        key: apiKey,
       },
     };
     $.ajax(url, settings)
       .done(data => {
         let objectview = JSON.parse(data);
-        let showTitle = objectview.title;
-        let showAuthor = objectview.author;
-        let showID = objectview.id;
-        $viewBookList.append($('<li>').html('Title: ' + showTitle + ', Author: ' + showAuthor));
-
-
+        $.each(objectview.data, function(index, value) {
+          $viewBookList.append(`<li>Title: ${value.title}, Author:${value.author} , id: ${value.id} </li>`);
+        })
       })
       .fail(error => {
         console.log(error);
       })
       .always(done => {
-        console.log(`is it ${done}`);
+        console.log(`is it done!! give Me sucesssss`);
       });
 
   });
-
-
-
-
-
 
 
 

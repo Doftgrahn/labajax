@@ -16,6 +16,13 @@ main {
   height: 200px;
   border: 2px solid black;
 }
+ul {
+  display:inline;
+}
+
+li {
+  background-color:tomato;
+}
 
 #receviedKey {
   display: inline-block;
@@ -30,6 +37,12 @@ main {
   height: 200px;
   padding: 20px;
   background-color: gray;
+}
+
+.view-books-container {
+  height: 300px;
+  border: 1px solid black;
+  background-color: lightblue;
 }
 
 footer {

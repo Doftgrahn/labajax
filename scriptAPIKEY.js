@@ -1,7 +1,9 @@
+const apiKey = 'R4FxP';
+
+
 $(document).ready(() => {
   const $listenButton = $('#listenButton');
   const $outputDivKey = $('#receviedKey');
-
 
 
   $listenButton.on('click', event => {
@@ -10,7 +12,6 @@ $(document).ready(() => {
     let settings = {
       method: 'GET',
       data: {
-        status: 'success',
         requestKey: '',
       },
     };
@@ -21,7 +22,7 @@ $(document).ready(() => {
     let newData = JSON.parse(data);
     let output = newData.key;
     $outputDivKey.append($('#receviedKey').text(output));
-    console.log('Server returned!');
+    console.log('Server returned!', output);
   };
 
   function whenAjaxFails(data) {
@@ -33,7 +34,8 @@ $(document).ready(() => {
   function onSucces(data) {
     console.log('server sent!');
   };
-  /*Första delen av fyra avklarad, kan hämta nyckel ovan.*/
+
+
 
 
 });

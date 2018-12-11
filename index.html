@@ -1,103 +1,99 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="sv" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title>AjaxLAB</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="button.css">
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="scriptAPIKEY.js"></script>
   <script src="addBook.js"></script>
   <script src="viewbooks.js"></script>
   <script src="modifyData.js"></script>
   <script src="delete.js"></script>
+  <script src="effects.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-  <!-- https://www.forverkliga.se/JavaScript/api/crud.php -->
 </head>
 
 <body>
 
-  <div class="container">
-    <h1> Simon Bookstore </h1>
-    <p> lorem lorem lorel ipsum</p>
-  </div>
+  <div class="content">
 
-  <main>
-
-    <button id="listenButton">Request API key</button>
-
-    <div id="receviedKey"></div>
-
-  </main>
-
-  <div class="addBook-container">
-
-
-    <input type="text" placeholder="Title" id="title"><br>
-    <input type="text" placeholder="Author" id="author"><br>
-    <button id="addBooksButton">Add Book</button><br>
-
-
-    <ul class="addedItems"></ul>
-
-  </div>
-
-  <div class="view-books-container">
-
-
-    <button id="viewBooks">View books</button>
-
-    <ul class="view-books-list"></ul>
+    <div class="container">
+      <article>
+          <h1 id="headline">Kållereds Bibliotek</h1>
+          <p id="text"></p>
+          <button id="shuffler">shuffle</button>
+      </article>
 
 
 
+    </div>
+    <div class="paralax"></div>
+
+    <main>
+      <button id="listenButton" class="btn-hover color-2">Request API key</button>
+      <div id="receviedKey"></div>
+    </main>
+
+
+
+    <div class="addBook-container">
+
+
+      <input type="text" placeholder="Title" id="title"><br>
+      <input type="text" placeholder="Author" id="author"><br>
+      <button id="addBooksButton" class="btn-hover color-2">Add Book</button><br>
+
+
+      <ul class="addedItems"></ul>
+
+    </div>
+
+    <div class="view-books-container">
+
+
+      <button id="viewBooks" class="btn-hover color-2">View books</button>
+
+      <ul class="view-books-list"></ul>
+      <div id="deleteOutput"></div>
+
+
+    </div>
+
+
+    <div class="modifyBooks">
+      <button id="modifyBookButton" class="btn-hover color-2" >Modify my Books!</button>
+      <br>
+      <input type="text" placeholder="modifyID" id="inputID"><br>
+      <input type="text" placeholder="modifyTitle" id="inputTitle"><br>
+      <input type="text" placeholder="modifyAuthor" id="inputAuthor">
+
+      <div id="outputmodify"></div>
+
+    </div>
 
 
 
 
-
-
-  </div>
-
-
-  <div class="modifyBooks">
-    <button id="modifyBookButton">Modify my Books!</button>
-    <br>
-    <input type="text" placeholder="modifyID" id="inputID"><br>
-    <input type="text" placeholder="modifyTitle" id="inputTitle"><br>
-    <input type="text" placeholder="modifyAuthor" id="inputAuthor">
-
-    <div id="outputmodify"></div>
-
-
-
-  </div>
-
-  <div class="deletebook">
+    <!-- <div class="deletebook">
 
     <button id="deletebook">Delete book</button>
 
     <input type="text" placeholder="Enter ID" id="deleteID"><br>
 
-    <div id="deleteOutput"></div>
+
+  </div> -->
+
+    <footer>
 
 
-
-
-
+    </footer>
   </div>
-
-
-
-
-
-
-
-
-
-
-  <footer> </footer>
-
 
 </body>
 

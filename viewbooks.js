@@ -16,7 +16,7 @@ $(document).ready(() => {
       .done(data => {
         let objectview = JSON.parse(data);
         $.each(objectview.data, function(index, value) {
-          $viewBookList.append(`<li>Title: ${value.title}, Author:${value.author} , id: ${value.id} <button data-id='${value.id}' class='btn-del'>Delete</button</li>`).fadeIn('slow');
+          $viewBookList.append(`<li>Title: ${value.title}, Author:${value.author} , id: ${value.id} <button data-id='${value.id}' class='btn-del'>Delete</button></li>`).fadeIn('slow');
         });
 
         $('.btn-del').on('click', event => {

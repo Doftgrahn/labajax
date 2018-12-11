@@ -1,0 +1,71 @@
+button {
+  margin: 5px;
+  margin-left: 200px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-2 {
+  background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+.btn-hover.color-7 {
+  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+button {
+  border: 2px solid tomato;
+  position: relative;
+  left:400px;
+  background: transparent;
+  width: 250px;
+  font-size: 1.2em;
+  padding: 10px 0;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 1em auto;
+}
+
+article {
+  width: 80%;
+  margin: auto;
+  font-size: 2em;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+#headline {}

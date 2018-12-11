@@ -1,3 +1,5 @@
+/*
+
 $(document).ready(() => {
   let deleteButton = $('#deletebook');
 
@@ -44,3 +46,4 @@ $(document).ready(() => {
 
 
 });
+*/

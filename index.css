@@ -1,29 +1,42 @@
+/*
+$color1: rgba(188, 216, 193, 1);
+$color2: rgba(214, 219, 178, 1);
+$color3: rgba(227, 217, 133, 1);
+$color4: rgba(229, 122, 68, 1);
+$color5: rgba(66, 32, 64, 1);
+*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+}
+
 body {
-  font-family: helvetica;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   border: 1px solid black;
-  background-color: lightblue;
+  background-color: rgba(188, 216, 193, 1);
 }
 
 h1 {
   text-align: center;
+  margin: 0;
+  color: rgba(214, 219, 178, 1);
+  letter-spacing: 20px;
+  padding: 30px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 p {
   display: inline-block;
   text-align: center;
-  background-color: lightblue;
+  background-color: rgba(188, 216, 193, 1);
 }
 
-button {
-  margin: 5px;
-  margin-left: 200px;
-  padding: 5px;
-  border: 1px solid black;
-}
 
 main {
-  height: 200px;
   border: 2px solid black;
 }
 
@@ -40,7 +53,7 @@ ul {
 
 li {
   justify-content: space-between;
-  background-color: tomato;
+  background-color: rgba(229, 122, 68, 1);
   box-shadow: 10px 10px black;
   Display: flex;
   Flex-direction: row;
@@ -48,39 +61,58 @@ li {
   Align-items: center;
 }
 
+
+
+.container {
+  background-color: rgba(66, 32, 64, 1);
+  height: 400px;
+}
+
 #receviedKey {
   display: inline-block;
   padding: 20px;
   border: 1px solid black;
   border-radius: 20px;
-  background-color: tomato;
+  background-color: rgba(229, 122, 68, 1);
+}
+
+.paralax {
+
+  background-image: url("bookpic.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 500px;
+  width: 100%;
 }
 
 /* Add book stars here */
 .addBook-container {
-  height: 200px;
   padding: 20px;
   background-color: gray border:1px solid black;
 }
 
 .view-books-container {
-  height: 300px;
-  border: 1px soxlid black;
   border: 1px solid black;
-  background-color: lightblue;
+  background-color: rgba(214, 219, 178, 1);
 }
 
 .modifyBooks {
-  height: 300px;
   border: 1px solid black;
-  background-color: gray;
+  background-color: rgba(188, 216, 193, 1);
 }
 
-.deletebook {
+.btn-del {
+  margin-right: 50px;
+  border-radius: 20px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
   height: 200px;
-  background-color: tomato;
-}
-
-#deleteOutput {
-  margin-left: 450px;
+  background-color: rgba(66, 32, 64, 1);
 }

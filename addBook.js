@@ -34,8 +34,13 @@ $(document).ready(() => {
       title: $title.val(),
       author: $author.val()
     };
-
+    let object = JSON.parse(data);
+    if (object.status == 'success'){
   $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
+  }
+  else {
+    $bookList.append('<li>Error!</li>');
+  }
   };
 
   function whenAjaxfail(error) {

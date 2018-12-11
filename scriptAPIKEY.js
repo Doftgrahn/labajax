@@ -35,7 +35,4 @@ $(document).ready(() => {
     console.log('server sent!');
   };
 
-
-
-
 });

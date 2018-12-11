@@ -4,7 +4,7 @@ $(document).ready(() => {
 
   deleteButton.on('click', event => {
 
-      let deleteID = ('#deleteID');
+    let deleteID = ('#deleteID');
 
 
     let url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
@@ -19,7 +19,13 @@ $(document).ready(() => {
 
     $.ajax(url, settings)
       .done(data => {
-        console.log('deleted');
+        let object = JSON.parse(data);
+        if (object.status == 'success') {
+          $('#deleteOutput').append('<p>Deletion succeded</p>');
+          console.log('deleted');
+        } else {
+          $('#deleteOutput').append('<p>Deletion not succeded</p>');
+        };
       })
       .fail(error => {
         console.log('error');

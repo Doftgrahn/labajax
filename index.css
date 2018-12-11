@@ -1,8 +1,8 @@
 body {
   font-family: helvetica;
   margin: 0;
+  border: 1px solid black;
   background-color: lightblue;
-  border:1px solid black;
 }
 
 h1 {
@@ -10,37 +10,42 @@ h1 {
 }
 
 p {
+  display: inline-block;
   text-align: center;
-
+  background-color: lightblue;
 }
-button {
-  margin:5px;
-  margin-left: 200px;
-  padding:5px;
-  border:1px solid black;
 
+button {
+  margin: 5px;
+  margin-left: 200px;
+  padding: 5px;
+  border: 1px solid black;
 }
 
 main {
   height: 200px;
   border: 2px solid black;
 }
+
 input {
-  margin:5px;
+  margin: 5px;
   margin-left: 200px;
-  padding:4px;
-  border:1px solid black;
-
+  padding: 4px;
+  border: 1px solid black;
 }
-ul {
-  display:inline;
 
+ul {
+  display: inline;
 }
 
 li {
-  background-color:tomato;
-  border-radius:10px;
+  justify-content: space-between;
+  background-color: tomato;
   box-shadow: 10px 10px black;
+  Display: flex;
+  Flex-direction: row;
+  Justify-content: space-between;
+  Align-items: center;
 }
 
 #receviedKey {
@@ -55,26 +60,27 @@ li {
 .addBook-container {
   height: 200px;
   padding: 20px;
-  background-color: gray
-  border:1px solid black;
-
+  background-color: gray border:1px solid black;
 }
 
 .view-books-container {
   height: 300px;
+  border: 1px soxlid black;
   border: 1px solid black;
   background-color: lightblue;
-  border:1px solid black;
-
 }
-.modifyBooks{
-  background-color:gray;
-  height:300px;
-  border:1px solid black;
 
+.modifyBooks {
+  height: 300px;
+  border: 1px solid black;
+  background-color: gray;
 }
 
 .deletebook {
-  height:200px;
-  background-color:tomato;
+  height: 200px;
+  background-color: tomato;
+}
+
+#deleteOutput {
+  margin-left: 450px;
 }

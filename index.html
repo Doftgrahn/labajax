@@ -6,7 +6,6 @@
   <title>AjaxLAB</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="button.css">
-
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="scriptAPIKEY.js"></script>
   <script src="addBook.js"></script>
@@ -25,56 +24,39 @@
 
     <div class="container">
       <article>
-          <h1 id="headline">Kållereds Bibliotek</h1>
-          <p id="text"></p>
-          <button id="shuffler">shuffle</button>
+        <h1 id="headline">Kållereds Bibliotek</h1>
+        <p id="text"></p>
+        <button id="shuffler">shuffle</button>
       </article>
-
-
-
     </div>
-    <div class="paralax"></div>
 
+    <div class="paralax"></div>
     <main>
       <button id="listenButton" class="btn-hover color-2">Request API key</button>
       <div id="receviedKey"></div>
     </main>
 
-
-
-    <div class="addBook-container">
-
-
-      <input type="text" placeholder="Title" id="title"><br>
-      <input type="text" placeholder="Author" id="author"><br>
+    <div class="addBook-container"><label for="title">Titel</label>
+      <input type="text" placeholder="Title" id="title" class=addBookButton><br>
+      <label for="author">Författare</label>
+      <input type="text" placeholder="Author" id="author" class=addBookButton><br>
       <button id="addBooksButton" class="btn-hover color-2">Add Book</button><br>
-
-
       <ul class="addedItems"></ul>
-
     </div>
 
     <div class="view-books-container">
-
-
       <button id="viewBooks" class="btn-hover color-2">View books</button>
-
       <ul class="view-books-list"></ul>
       <div id="deleteOutput"></div>
-
-
     </div>
 
-
     <div class="modifyBooks">
-      <button id="modifyBookButton" class="btn-hover color-2" >Modify my Books!</button>
+      <button id="modifyBookButton" class="btn-hover color-2">Modify my Books!</button>
       <br>
       <input type="text" placeholder="modifyID" id="inputID"><br>
       <input type="text" placeholder="modifyTitle" id="inputTitle"><br>
       <input type="text" placeholder="modifyAuthor" id="inputAuthor">
-
       <div id="outputmodify"></div>
-
     </div>
 
 

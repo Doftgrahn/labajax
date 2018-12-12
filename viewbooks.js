@@ -2,9 +2,9 @@ $(document).ready(() => {
 
   let $viewBooksButton = $('#viewBooks');
   let $viewBookList = $('.view-books-list');
-  let url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
 
   $viewBooksButton.on('click', event => {
+
     let settings = {
       method: 'GET',
       data: {
@@ -16,12 +16,14 @@ $(document).ready(() => {
       .done(data => {
         let objectview = JSON.parse(data);
         $.each(objectview.data, function(index, value) {
-$viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id} <button data-id='${value.id}' class='btn-del'>Delete</button></li>`).show().fadeIn()
+          //$viewBookList.clear().
+
+$viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
+<button data-id='${value.id}' class='btn-del'>Delete</button></li>`)
 
 
 
         });
-
         $('.btn-del').on('click', event => {
           let bookId = $(event.target).attr('data-id');
           if (bookId) {
@@ -31,11 +33,12 @@ $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value
       })
       .fail(error => {
         console.log(error);
+        $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
+        <button data-id='${value.id}' class='btn-del'>Delete</button></li>`)
       })
       .always(done => {
         console.log(`is it done!! give Me sucesssss`);
       });
-
   });
 
   function DeleteBook(bookId) {
@@ -47,13 +50,11 @@ $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value
         id: bookId,
       },
     };
-
     $.ajax(url, settings)
       .done(data => {
         let object = JSON.parse(data);
         if (object.status == 'success') {
           $('#deleteOutput').append('<p>Deletion succeded</p>');
-          console.log('deleted');
         } else {
           $('#deleteOutput').append('<p>Deletion not succeded</p>');
         };
@@ -65,6 +66,4 @@ $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value
         console.log(always);
       })
   }
-
-
 });

@@ -5,13 +5,7 @@ $(document).ready(() => {
   let $title = $('#title');
   let $author = $('#author');
 
-
-
   $addBooksButton.on('click', data => {
-
-
-
-    let url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
     let settings = {
       method: 'GET',
       data: {
@@ -19,10 +13,8 @@ $(document).ready(() => {
         key: apiKey,
         title: $('#title').val(),
         author: $('#author').val()
-
       },
     };
-
     $.ajax(url, settings)
       .done(whenAjaxPost)
       .fail(whenAjaxfail)
@@ -35,22 +27,16 @@ $(document).ready(() => {
       author: $author.val()
     };
     let object = JSON.parse(data);
-    if (object.status == 'success'){
-  $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
-  }
-  else {
-    $bookList.append('<li>Error!</li>');
-  }
+    if (object.status == 'success') {
+      $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
+    } else {
+      $bookList.append('<li>Error!</li>');
+    }
   };
-
   function whenAjaxfail(error) {
     console.log('något gick fel', error);
   };
-
   function serverReturn(always) {
     console.log('serverReturn', always);
   };
-
-
-
 });

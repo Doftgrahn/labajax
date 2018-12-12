@@ -6,7 +6,6 @@ $(document).ready(() => {
   const modifyAuthor = $('#modifyAuthor');
 
   modifyBookButton.on('click', data => {
-    let url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
     let settings = {
       method: 'GET',
       data: {

@@ -1,14 +1,13 @@
 const apiKey = 'ZCVqM';
+const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
+
 
 
 $(document).ready(() => {
   const $listenButton = $('#listenButton');
   const $outputDivKey = $('#receviedKey');
 
-
   $listenButton.on('click', event => {
-
-    let url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
     let settings = {
       method: 'GET',
       data: {

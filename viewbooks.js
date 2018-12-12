@@ -14,16 +14,20 @@ $(document).ready(() => {
     };
     $.ajax(url, settings)
       .done(data => {
+        $viewBookList.empty()
+
+
         let objectview = JSON.parse(data);
         $.each(objectview.data, function(index, value) {
-          //$viewBookList.clear().
 
-$viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
+          $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
 <button data-id='${value.id}' class='btn-del'>Delete</button></li>`)
 
-
-
         });
+        $('.showList').slideDown(500).$('.showList').show();
+
+
+
         $('.btn-del').on('click', event => {
           let bookId = $(event.target).attr('data-id');
           if (bookId) {

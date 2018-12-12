@@ -7,7 +7,7 @@ $color5: rgba(66, 32, 64, 1);
 */
 * {
   box-sizing: border-box;
-  transition: 1s ease;
+  /* transition: 1s ease; */
 }
 
 html {
@@ -136,7 +136,7 @@ li {
 #author {}
 
 .showList {
-  transition: 0.2s ease;
+  display: none;
   border: 1px solid black;
   width: 90%;
   margin-left: 30px;

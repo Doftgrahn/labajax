@@ -22,6 +22,7 @@ return;
     $.ajax(url, settings)
 
       .done(data => {
+        $('.errormessages').append(data).show();
         console.log('Slide in');
         $('.showList').fadeOut('slow');
         $viewBookList.empty();
@@ -44,9 +45,11 @@ return;
         });
       })
       .fail(error => {
+        $('.errormessages').append(error).show();
         console.log(error);
         ('$deleteOutput').append(`error, testar igen...`)
-        viewBookSendRequest(numberOfTries-1)
+        viewBookSendRequest(numberOfTries-1);
+        $('.errormessages').append(error).show();
       })
 
       .always(done => {
@@ -79,6 +82,9 @@ return;
 
       $.ajax(url, settings)
         .done(data => {
+          $('.errormessages').append(data).show();
+
+
           let object = JSON.parse(data);
           if (object.status == 'success') {
             console.log(data);
@@ -92,8 +98,8 @@ return;
         })
 
         .fail(error => {
+          $('.errormessages').append(error).show();
           console.log(data);
-          //  $('.showList').show();
           requestSent(numberOfTries - 1);
 
         })

@@ -26,6 +26,8 @@ $(document).ready(() => {
       $.ajax(url, settings)
 
         .done(data => {
+          $('.errormessages').append(data).show();
+
           let object = JSON.parse(data);
           if (object.status == 'success') {
             console.log('done here', object);
@@ -39,6 +41,8 @@ $(document).ready(() => {
         .fail(error => {
           console.log('error', 'testar igen!');
           modifySendRequest(numberOfTries - 1);
+          $('.errormessages').append(error).show();
+
 
         })
         .always(always => {

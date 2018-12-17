@@ -2,7 +2,7 @@ $(document).ready(() => {
 
   let $viewBooksButton = $('#viewBooks');
   let $viewBookList = $('.view-books-list');
-
+  let objectview;
   $viewBooksButton.on('click', event => {
 
     let settings = {
@@ -14,32 +14,34 @@ $(document).ready(() => {
     };
     $.ajax(url, settings)
       .done(data => {
-        $viewBookList.empty()
-
-
+        $('.showList').fadeOut('slow');
+        $viewBookList.empty();
         let objectview = JSON.parse(data);
-        $.each(objectview.data, function(index, value) {
 
+        $.each(objectview.data, function(index, value) {
           $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
 <button data-id='${value.id}' class='btn-del'>Delete</button></li>`)
-
         });
-        $('.showList').slideDown(500).$('.showList').show();
 
-
+        $('.showList').slideDown('fast');
+        $('.showList').show();
 
         $('.btn-del').on('click', event => {
+          //console .log('Kommer jag åt informationen?', objectview.status);
+          console.log('Klickas det?', event);
           let bookId = $(event.target).attr('data-id');
           if (bookId) {
             DeleteBook(bookId);
-          }
+            $(event.target).parent().clear();
+          };
+
         });
       })
       .fail(error => {
         console.log(error);
-        $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
-        <button data-id='${value.id}' class='btn-del'>Delete</button></li>`)
+        ('$deleteOutput').append(`error`)
       })
+      
       .always(done => {
         console.log(`is it done!! give Me sucesssss`);
       });
@@ -58,16 +60,24 @@ $(document).ready(() => {
       .done(data => {
         let object = JSON.parse(data);
         if (object.status == 'success') {
-          $('#deleteOutput').append('<p>Deletion succeded</p>');
+          console.log(data);
+
+          $('#deleteOutput').append('<p class="errormessagedelete">Deletion succeded</p>');
+
         } else {
-          $('#deleteOutput').append('<p>Deletion not succeded</p>');
+          $('#deleteOutput').append('<p class="errormessagedelete">Deletion not succeded</p>');
+
+
+
         };
       })
       .fail(error => {
-        console.log('error');
+        console.log(data);
+      //  $('.showList').show();
+
       })
       .always(always => {
-        console.log(always);
+        console.log('kommer alltid visas');
       })
   }
 });

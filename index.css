@@ -5,185 +5,245 @@ $color3: rgba(227, 217, 133, 1);
 $color4: rgba(229, 122, 68, 1);
 $color5: rgba(66, 32, 64, 1);
 */
-* {
-  box-sizing: border-box;
-  /* transition: 1s ease; */
+*
+{
+    box-sizing: border-box;
+    /* transition: 1s ease; */
 }
 
-html {
-  margin: 0;
+html
+{
+    margin: 0;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  border: 1px solid black;
-  background-color: rgba(188, 216, 193, 1);
+body
+{
+    font-family: 'Roboto', sans-serif;
+
+    margin: 0;
+
+    border: 1px solid black;
+    background-color: rgba(188, 216, 193, 1);
 }
 
-h1 {
-  text-align: center;
-  /* margin: 0; */
-  color: rgba(66, 32, 64, 1);
-  letter-spacing: 20px;
-  padding: 30px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+h1
+{
+    padding: 30px;
+
+    text-align: center;
+    letter-spacing: 20px;
+    /* margin: 0; */
+
+    color: rgba(66, 32, 64, 1);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-p {
-  display: inline-block;
-  text-align: center;
-  background-color: rgba(188, 216, 193, 1);
+p
+{
+    display: inline-block;
+
+    text-align: center;
+
+    background-color: rgba(188, 216, 193, 1);
 }
 
-main {
-  border: 2px solid black;
+main
+{
+    border: 2px solid black;
 }
 
-input {
-  margin: 5px;
-  margin-left: 200px;
-  padding: 4px;
-  border: 1px solid black;
+input
+{
+    margin: 5px;
+    margin-left: 200px;
+    padding: 4px;
+
+    border: 1px solid black;
 }
 
-ul {
-  display: inline;
+ul
+{
+    display: inline;
 }
 
-li {
-  justify-content: space-between;
-  background-color: rgba(229, 122, 68, 1);
-  box-shadow: 10px 10px black;
-  Display: flex;
-  Flex-direction: row;
-  Justify-content: space-between;
-  Align-items: center;
-  border-radius: 20px;
-  padding: 10px;
+li
+{
+    justify-content: space-between;
+
+    padding: 10px;
+
+    border-radius: 20px;
+    background-color: rgba(229, 122, 68, 1);
+    box-shadow: 10px 10px black;
+
+    Display: flex;
+    Flex-direction: row;
+    Justify-content: space-between;
+    Align-items: center;
 }
 
-.container {
-  background-color: rgba(214, 219, 178, 1);
-  height: 200px;
-  padding: 20px;
+.container
+{
+    height: 200px;
+    padding: 20px;
+
+    background-color: rgba(214, 219, 178, 1);
 }
 
-#receviedKey {
-  display: inline-block;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 20px;
-  background-color: rgba(229, 122, 68, 1);
+#receviedKey
+{
+    display: inline-block;
+
+    padding: 20px;
+
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgba(229, 122, 68, 1);
 }
 
-.paralax {
-  background-image: url("bookpic.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-  width: 100%;
+.paralax
+{
+    width: 100%;
+    height: 500px;
+
+    background-image: url('bookpic.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Add book stars here */
-.mainaddBookContainer {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
+.mainaddBookContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
 }
 
-.addBook-container {
-  width: 50%;
-  background-color: gray border:1px solid black;
+.addBook-container
+{
+    width: 50%;
+
+    background-color: gray border:1px solid black;
 }
 
-.addBook-container>input {
-  position: relative;
-  margin: 40px;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 10px;
-  border-radius: 20px;
+.addBook-container > input
+{
+    position: relative;
+
+    margin: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+
+    border-radius: 20px;
 }
 
-.addBook-container>input:hover {
-  opacity: 0.8;
+.addBook-container > input:hover
+{
+    opacity: .8;
 }
 
-.rightofaddbook {
-  width: 50%;
-  margin: 0;
+.rightofaddbook
+{
+    width: 50%;
+    margin: 0;
 }
 
-.rightofaddbook img {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
+.rightofaddbook img
+{
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
 }
 
-.view-books-container {
-  border: 1px solid black;
-  background-color: rgba(214, 219, 178, 1);
-  padding: 20px;
+.view-books-container
+{
+    padding: 20px;
+
+    border: 1px solid black;
+    background-color: rgba(214, 219, 178, 1);
 }
 
-.addBookButton {
-  margin: 0 auto;
+.addBookButton
+{
+    margin: 0 auto;
 }
 
-#author {}
 
-.showList {
-  display: none;
-  border: 1px solid black;
-  width: 90%;
-  margin-left: 30px;
+
+.showList
+{
+    display: none;
+
+    width: 90%;
+    margin-left: 30px;
+
+    border: 1px solid black;
 }
 
-.showList:hover {
-  background-color: rgba(227, 217, 133, 1);
-  -webkit-transform: scale(1.01);
-  -ms-transform: scale(1.01);
-  transform: scale(1.01);
+.showList:hover
+{
+    -webkit-transform: scale(1.01);
+        -ms-transform: scale(1.01);
+            transform: scale(1.01);
+
+    background-color: rgba(227, 217, 133, 1);
 }
 
-.modifybookcontainer {
-  display: flex;
-  flex-wrap: wrap;
-  height:300px;
+.modifybookcontainer
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    height: 300px;
 }
 
-.leftofmodifyBook {
-  width: 50%;
-}
-.leftofmodifyBook img {
-  object-fit: cover;
-  width:100%;
-  height:300px;
-
-
+.leftofmodifyBook
+{
+    width: 50%;
 }
 
-.modifyBooks {
-  border-left: 1px solid black;
-  width: 50%;
-  background-color: rgba(188, 216, 193, 1);
+.leftofmodifyBook img
+{
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
 }
 
-.modifyInput {
-  position: relative;
-  margin: 20px;
-  padding: 10px;
-  border-radius: 20px;
+.modifyBooks
+{
+    width: 50%;
+
+    border-left: 1px solid black;
+    background-color: rgba(188, 216, 193, 1);
 }
 
-.btn-del {
-  margin-right: 50px;
-  border-radius: 20px;
+.modifyInput
+{
+    position: relative;
+
+    margin: 20px;
+    padding: 10px;
+
+    border-radius: 20px;
 }
 
-.scroll-down-button {
-  border-radius: 20px;
+.btn-del
+{
+    margin-right: 50px;
+
+    border-radius: 20px;
+} 
+
+
+
+
+.scroll-down-button
+{
+    border-radius: 20px;
 }

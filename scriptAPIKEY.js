@@ -14,7 +14,19 @@ $(document).ready(() => {
         requestKey: '',
       },
     };
-    $.ajax(url, settings).done(whenAjaxDone).fail(whenAjaxFails).always(onSucces);
+
+$listenButton.prop('disabled', true);
+sendScriptRequest();
+
+function sendScriptRequest (numberOfTries = 5)  {
+  if (numberOfTries < 1)
+  return;
+    $.ajax(url, settings)
+    .done(whenAjaxDone)
+    .fail(whenAjaxFails)
+    .always(onSucces);
+  }
+
   });
 
   function whenAjaxDone(data) {
@@ -27,11 +39,14 @@ $(document).ready(() => {
   function whenAjaxFails(data) {
     console.log('Does not work');
     alert('does not work');
-    $outputDivKey.append($('#receviedKey').text('Något gick fel här!'));
+    $outputDivKey.append($('#receviedKey').text('Något gick fel här! Testar igen!'));
+    sendScriptRequest(numberOfTries - 1);
   };
 
   function onSucces(data) {
     console.log('server sent!');
+    $listenButton.prop('disabled', false);
+
   };
 
 });

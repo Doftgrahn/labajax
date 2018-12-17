@@ -16,27 +16,39 @@ $(document).ready(() => {
         author: $('#inputAuthor').val(),
       },
     };
+    modifyBookButton.prop('disabled', true);
+    modifySendRequest();
 
-    $.ajax(url, settings)
+    function modifySendRequest(numberOfTries = 5) {
+      if (numberOfTries < 1)
+        return;
 
-      .done(data => {
-        let object = JSON.parse(data);
-        if (object.status == 'success') {
-          console.log('done here', object);
-          $('#outputmodify').append('<p>modification succeded</p>');
-        }
-        else {
-          console.log('Nothing is working');
-          $('#outputmodify').append("<p>Didn't succed'</p>");
+      $.ajax(url, settings)
 
-        };
-      })
-      .fail(error => {
-        console.log('error');
-      })
-      .always(always => {
-        console.log('Will always return');
-      })
+        .done(data => {
+          let object = JSON.parse(data);
+          if (object.status == 'success') {
+            console.log('done here', object);
+            $('#outputmodify').append('<p>modification succeded</p>');
+          } else {
+            console.log('Nothing is working');
+            $('#outputmodify').append("<p>Didn't succed'</p>");
+
+          };
+        })
+        .fail(error => {
+          console.log('error', 'testar igen!');
+          modifySendRequest(numberOfTries - 1);
+
+        })
+        .always(always => {
+          console.log('Will always return');
+          modifyBookButton.prop('disabled', false);
+
+        })
+
+    };
+
   })
 
 });

@@ -45,6 +45,7 @@ input {
   margin-left: 200px;
   padding: 4px;
   border: 1px solid black;
+  font-size: 16px;
 }
 
 ul {
@@ -129,6 +130,23 @@ li {
   background-color: rgba(214, 219, 178, 1);
 }
 
+#deleteOutput {
+  display: inline-block;
+  background-color: rgba(229, 122, 68, 1);
+  box-shadow: 10px 10px black;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  display: none;
+}
+
+#deleteOutput>* {
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 10px 10px black;
+  margin: 5px;
+}
+
 .addBookButton {
   margin: 0 auto;
 }
@@ -168,12 +186,12 @@ li {
   border-left: 1px solid black;
   background-color: rgba(188, 216, 193, 1);
 }
+
 .errormessages {
   display: none;
-  border:1px solid black;
-  box-shadow:10px 10px black;
-  background-color:rgba(227, 217, 133, 1);
-
+  border: 1px solid black;
+  box-shadow: 10px 10px black;
+  background-color: rgba(227, 217, 133, 1);
 }
 
 .modifyInput {

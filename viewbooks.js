@@ -22,7 +22,7 @@ return;
     $.ajax(url, settings)
 
       .done(data => {
-        $('.errormessages').append(data).show();
+        // $('.errormessages').append(data).show();
         console.log('Slide in');
         $('.showList').fadeOut('slow');
         $viewBookList.empty();
@@ -47,9 +47,12 @@ return;
       .fail(error => {
         $('.errormessages').append(error).show();
         console.log(error);
-        ('$deleteOutput').append(`error, testar igen...`)
+        ('$deleteOutput').append(`error, testar igen... status är ${objectview.message}`)
         viewBookSendRequest(numberOfTries-1);
-        $('.errormessages').append(error).show();
+        $('#deleteOutput').slideDown('fast');
+        $('#deleteOutput').show();
+
+      //  $('.errormessages').append(error).show();
       })
 
       .always(done => {
@@ -82,9 +85,6 @@ return;
 
       $.ajax(url, settings)
         .done(data => {
-          $('.errormessages').append(data).show();
-
-
           let object = JSON.parse(data);
           if (object.status == 'success') {
             console.log(data);
@@ -106,6 +106,9 @@ return;
         .always(always => {
           console.log('kommer alltid visas');
           $('.btn-del').prop('disabled', false)
+          $('#deleteOutput').slideDown('fast');
+          $('#deleteOutput').show();
+
 
         })
     }; //requestSent

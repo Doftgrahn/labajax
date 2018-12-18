@@ -30,18 +30,16 @@ function sendScriptRequest (numberOfTries = 5)  {
   });
 
   function whenAjaxDone(data) {
-    $('.errormessages').append(data).show();
-
     let newData = JSON.parse(data);
     let output = newData.key;
-    $outputDivKey.append($('#receviedKey').text(output));
+    $('.errormessages').append(newData.status).show();
+    $outputDivKey.append($('#receviedKey').html(`status är ${newData.status}.<br>Din Nyckel är <strong>${output}</strong>`));
     console.log('Server returned!', output);
   };
 
   function whenAjaxFails(data) {
     console.log('Does not work');
     $('.errormessages').append(error).show();
-    alert('does not work');
     $outputDivKey.append($('#receviedKey').text('Något gick fel här! Testar igen!'));
     sendScriptRequest(numberOfTries - 1);
   };

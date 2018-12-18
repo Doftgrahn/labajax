@@ -15,7 +15,7 @@ $(document).ready(() => {
         author: $('#author').val()
       },
     };
-    $addBooksButton.prop('disabled', true);
+    $addBooksButton.prop('disabled', false);
     sendrequest();
 
     function sendrequest(numberOfTries = 5) {
@@ -38,11 +38,12 @@ $(document).ready(() => {
     if (object.status == 'success') {
       $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
     } else {
-      $bookList.append('<li>Error! Retrying...</li>');
+      $bookList.append(`<li>Error! Retrying...status is ${object.message}`);
     }
   };
 
   function whenAjaxfail(error, numberOfTries) {
+    $bookList.append('<li>Error! Retrying...</li>');
     console.log('något gick fel', error);
     sendrequest(numberOfTries - 1);
   };

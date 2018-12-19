@@ -1,4 +1,4 @@
-const apiKey = '4hp6W';
+const apiKey = 'k0L4B';
 const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
 
 
@@ -15,30 +15,28 @@ $(document).ready(() => {
       },
     };
 
-$listenButton.prop('disabled', true);
-sendScriptRequest();
+    $listenButton.prop('disabled', true);
+    sendScriptRequest();
 
-function sendScriptRequest (numberOfTries = 5)  {
-  if (numberOfTries < 1)
-  return;
-    $.ajax(url, settings)
-    .done(data => whenAjaxDone(data,numberOfTries))
-    .fail(error => whenAjaxFails(error,numberOfTries))
-    .always(onSucces);
-  }
-
+    function sendScriptRequest(numberOfTries = 5) {
+      if (numberOfTries < 1)
+        return;
+      $.ajax(url, settings)
+        .done(data => whenAjaxDone(data, numberOfTries))
+        .fail(error => whenAjaxFails(error, numberOfTries))
+        .always(onSucces);
+    }
   });
 
   function whenAjaxDone(data) {
     let newData = JSON.parse(data);
     let output = newData.key;
-    $('.errormessages').append(newData.status).show();
-    $outputDivKey.append($('#receviedKey').html(`status är ${newData.status}.<br>Din Nyckel är <strong>${output}</strong>`));
+    $('#receviedKey').show()
+    $outputDivKey.append($('#receviedKey').html(`here's your key: <strong>${output}</strong>! Save it for later!`));
   };
 
   function whenAjaxFails(error) {
-    $('.errormessages').append(error).show();
-    $outputDivKey.append($('#receviedKey').text('Något gick fel här! Testar igen! Vi har kontaktat servern'+ numberOfTries + 'gånger.' ));
+    $outputDivKey.append($('#receviedKey').text('Something went wrong!' + numberOfTries + 'times!'));
     sendScriptRequest(numberOfTries - 1);
   };
 

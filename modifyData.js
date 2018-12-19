@@ -29,12 +29,10 @@ $(document).ready(() => {
 
           let object = JSON.parse(data);
           if (object.status == 'success') {
-            console.log('done here', object);
             $('#deleteOutput').append('<p>modification succeded</p>');
           } else {
             console.log('Nothing is working');
-            $('#outputmodify').append("<p>Didn't succed'</p>");
-
+            $('#deleteOutput').append('<p class="errormessagedelete">Try Again!</p>');
           };
         })
         .fail(error => {
@@ -42,7 +40,6 @@ $(document).ready(() => {
           modifySendRequest(numberOfTries - 1);
         })
         .always(always => {
-          console.log('Will always return');
           modifyBookButton.prop('disabled', false);
         })
     };

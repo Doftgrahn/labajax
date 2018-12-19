@@ -131,9 +131,8 @@ li {
 }
 
 #deleteOutput {
+  width:150px;
   position: absolute;
-  height:200px;
-  width:200px;
   display: inline-block;
   background-color: rgba(229, 122, 68, 1);
   box-shadow: 10px 10px black;

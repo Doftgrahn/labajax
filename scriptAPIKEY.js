@@ -22,8 +22,8 @@ function sendScriptRequest (numberOfTries = 5)  {
   if (numberOfTries < 1)
   return;
     $.ajax(url, settings)
-    .done(whenAjaxDone)
-    .fail(whenAjaxFails)
+    .done(data => whenAjaxDone(data,numberOfTries))
+    .fail(error => whenAjaxFails(error,numberOfTries))
     .always(onSucces);
   }
 
@@ -34,18 +34,15 @@ function sendScriptRequest (numberOfTries = 5)  {
     let output = newData.key;
     $('.errormessages').append(newData.status).show();
     $outputDivKey.append($('#receviedKey').html(`status är ${newData.status}.<br>Din Nyckel är <strong>${output}</strong>`));
-    console.log('Server returned!', output);
   };
 
-  function whenAjaxFails(data) {
-    console.log('Does not work');
+  function whenAjaxFails(error) {
     $('.errormessages').append(error).show();
-    $outputDivKey.append($('#receviedKey').text('Något gick fel här! Testar igen!'));
+    $outputDivKey.append($('#receviedKey').text('Något gick fel här! Testar igen! Vi har kontaktat servern'+ numberOfTries + 'gånger.' ));
     sendScriptRequest(numberOfTries - 1);
   };
 
   function onSucces(data) {
-    console.log('server sent!');
     $listenButton.prop('disabled', false);
 
   };

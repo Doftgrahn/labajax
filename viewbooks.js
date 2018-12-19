@@ -21,17 +21,22 @@ return;
 
     $.ajax(url, settings)
       .done(data => {
-        // $('.errormessages').append(data).show();
-        console.log('Slide in');
         $('.showList').fadeOut('slow');
         $viewBookList.empty();
         let objectview = JSON.parse(data);
+
+        if (objectview.status === 'success')
+        {
         $.each(objectview.data, function(index, value) {
           $viewBookList.append(`<li class="showList">Title: ${value.title}, Author:${value.author} , id: ${value.id}
 <button data-id='${value.id}' class='btn-del'>Delete</button></li>`)
         });
         $('.showList').slideDown('fast');
-        $('.showList').show();
+        $('.showList').show();}
+else {
+  $('#deleteOutput').show();
+  $('#deleteOutput').append('<p>Något gick fel här vi har anropat servern ' +  numberOfTries +' gånger.</p>');
+};
 
 
 
@@ -48,7 +53,6 @@ return;
       .fail(error => {
 
         $('.errormessages').append(error).show();
-        console.log(error);
         $('#deleteOutput').append(`error, testar igen... status är ${objectview.message}`);
         viewBookSendRequest(numberOfTries-1);
         $('#deleteOutput').slideDown('fast');
@@ -59,7 +63,6 @@ return;
       })
 
       .always(done => {
-        console.log(`is it done!! give Me sucesssss`);
         $viewBooksButton.prop('disabled', false);
 
       });
@@ -82,7 +85,6 @@ return;
     requestSent();
 
     function requestSent(numberOfTries = 5) {
-      console.log('requestSent anropad');
       if (numberOfTries < 1)
         return;
 
@@ -90,10 +92,7 @@ return;
         .done(data => {
           let object = JSON.parse(data);
           if (object.status == 'success') {
-            console.log(data);
-
             $('#deleteOutput').append('<p class="errormessagedelete">Deletion succeded</p>');
-
           } else {
             $('#deleteOutput').append('<p class="errormessagedelete">Deletion not succeded, retrying...</p>');
             requestSent(numberOfTries - 1);
@@ -102,19 +101,18 @@ return;
 
         .fail(error => {
           $('.errormessages').append(error).show();
-          console.log(data);
           requestSent(numberOfTries - 1);
+          $('#deleteOutput').append('<p class=errormessagedelete">Delation did not work out that well, we are retrying</p>');
+
+
 
         })
         .always(always => {
-          console.log('kommer alltid visas');
           $('.btn-del').prop('disabled', false)
           $('#deleteOutput').slideDown('fast');
           $('#deleteOutput').show();
-
-
-        })
+        });
     }; //requestSent
 
-  }
+  };
 });

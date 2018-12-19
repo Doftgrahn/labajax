@@ -20,7 +20,6 @@ if (numberOfTries < 1)
 return;
 
     $.ajax(url, settings)
-
       .done(data => {
         // $('.errormessages').append(data).show();
         console.log('Slide in');
@@ -34,6 +33,8 @@ return;
         $('.showList').slideDown('fast');
         $('.showList').show();
 
+
+
         $('.btn-del').on('click', event => {
           console.log('Klickas det?', event);
           let bookId = $(event.target).attr('data-id');
@@ -45,12 +46,14 @@ return;
         });
       })
       .fail(error => {
+
         $('.errormessages').append(error).show();
         console.log(error);
-        ('$deleteOutput').append(`error, testar igen... status är ${objectview.message}`)
+        $('#deleteOutput').append(`error, testar igen... status är ${objectview.message}`);
         viewBookSendRequest(numberOfTries-1);
         $('#deleteOutput').slideDown('fast');
         $('#deleteOutput').show();
+
 
       //  $('.errormessages').append(error).show();
       })

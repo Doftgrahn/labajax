@@ -43,9 +43,12 @@ function modifySendRequest(numberOfTries = 5) {
 
 
       } else {
+        $('#deleteOutput').clear();
         $('#deleteOutput').show();
-        $('#deleteOutput').append('<p class="errormessagedelete">Try Again!</p>');
-        $('#deleteOutput').append('<p>modification did not succed</p> ' + numberOfTries + ' times.</p>');
+        $('#deleteOutput').append('<p>modification did not succed ' + numberOfTries + ' times.</p>');
+        modifySendRequest(numberOfTries - 1);
+        viewBookSendRequest();
+
 
       };
     })

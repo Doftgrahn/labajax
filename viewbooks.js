@@ -92,8 +92,8 @@ function DeleteBook(bookId) {
       key: apiKey,
       id: bookId,
     },
-    };
-    $('.btn-del').prop('disabled', true)
+  };
+  $('.btn-del').prop('disabled', true)
 
   requestSent();
 

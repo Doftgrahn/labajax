@@ -134,13 +134,13 @@ li {
 #deleteOutput {
   width: 150px;
   position: absolute;
-  display: inline-block;
+  /* display: block; */
   background-color: rgba(229, 122, 68, 1);
   box-shadow: 10px 10px black;
   border-radius: 20px;
   padding: 10px;
   margin: 10px;
-  display: inline-block;
+  /* display: inline-block; */
   display: none;
   z-index: 1;
   left: 100px;

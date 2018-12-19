@@ -201,7 +201,7 @@ $(document).ready(() => {
     this.writeWord(this.holder.innerHTML);
 
 
-    console.log(this.currentWord);
+    //console.log(this.currentWord);
     update(time);
   }
 

@@ -32,7 +32,7 @@ $(document).ready(() => {
     let newData = JSON.parse(data);
     let output = newData.key;
     $('#receviedKey').show()
-    $outputDivKey.append($('#receviedKey').html(`here's your key: <strong>${output}</strong>! Save it for later!`));
+    $outputDivKey.append($('#receviedKey').html(`Here's your key: <strong>${output}</strong>! Save it for later!`));
   };
 
   function whenAjaxFails(error) {

@@ -43,9 +43,11 @@ $(document).ready(() => {
       let object = JSON.parse(data);
       if (object.status === 'success') {
         $bookList.append($('<li>').html('Title: ' + bookID.title + ', Author: ' + bookID.author));
+        viewBookSendRequest();
+
 
       } else {
-        $bookList.append(`<li>Error! Retrying...status is ${object.message}. we have tried ${tries} times.`);
+        $('#deleteOutput').append(`<li>Error! Retrying...status is ${object.message}. we have tried ${tries} times.</li>`);
         sendAJAXrequest(tries - 1);
       };
     };
@@ -54,13 +56,10 @@ $(document).ready(() => {
 
   function whenAjaxfail(error, tries) {
     $bookList.append('<li>Error! Retrying...</li>');
-    console.log('något gick fel');
-    console.log('numberOfTries har i function whenAjaxfail' + numberOfTries);
     sendAJAXrequest(tries - 1);
   };
 
   function serverReturn(always) {
-    console.log('serverReturn', always);
     $('.btn-del').prop('disabled', false)
 
   };

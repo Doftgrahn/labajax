@@ -221,8 +221,8 @@ li {
   border-radius: 20px;
 }
 
-.btn-del2 {
-  float: right;
+.btn-del2 > * {
+  border-radius:20px;
 }
 
 .scroll-down-button {

@@ -43,7 +43,7 @@ function modifySendRequest(numberOfTries = 5) {
 
 
       } else {
-        $('#deleteOutput').clear();
+        //$('#deleteOutput').clear();
         $('#deleteOutput').show();
         $('#deleteOutput').append('<p>modification did not succed ' + numberOfTries + ' times.</p>');
         modifySendRequest(numberOfTries - 1);

@@ -6,8 +6,8 @@ $color4: rgba(229, 122, 68, 1);
 $color5: rgba(66, 32, 64, 1);
 */
 * {
-  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
   /* transition: 1s ease; */
 }
 
@@ -41,11 +41,11 @@ main {
 }
 
 input {
+  font-size: 16px;
   margin: 5px;
   margin-left: 200px;
   padding: 4px;
   border: 1px solid black;
-  font-size: 16px;
 }
 
 ul {
@@ -72,11 +72,10 @@ li {
 
 #receviedKey {
   display: inline-block;
-  transition: 1s ease;
-  padding:20px;
-  background-color: rgba(229, 122, 68, 1);
   display: none;
-
+  padding: 20px;
+  transition: 1s ease;
+  background-color: rgba(229, 122, 68, 1);
 }
 
 .paralax {
@@ -132,19 +131,19 @@ li {
 }
 
 #deleteOutput {
-  width: 150px;
   position: absolute;
+  z-index: 1;
+  left: 100px;
+  /* display: inline-block; */
+  display: none;
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+  transform: translateY(100px);
+  border-radius: 20px;
   /* display: block; */
   background-color: rgba(229, 122, 68, 1);
   box-shadow: 10px 10px black;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 10px;
-  /* display: inline-block; */
-  display: none;
-  z-index: 1;
-  left: 100px;
-  transform: translateY(50px);
 }
 
 @media(max-width:600px) {
@@ -155,10 +154,10 @@ li {
 }
 
 #deleteOutput>* {
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 10px 10px black;
   margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 10px 10px black;
 }
 
 .addBookButton {
@@ -167,10 +166,10 @@ li {
 
 .showList {
   display: none;
-  margin: 10px;
   width: 80%;
-  border: 1px solid black;
+  margin: 10px;
   padding: 10px;
+  border: 1px solid black;
 }
 
 .showList:hover {
@@ -205,8 +204,8 @@ li {
 .errormessages {
   display: none;
   border: 1px solid black;
-  box-shadow: 10px 10px black;
   background-color: rgba(227, 217, 133, 1);
+  box-shadow: 10px 10px black;
 }
 
 .modifyInput {
@@ -221,8 +220,8 @@ li {
   border-radius: 20px;
 }
 
-.btn-del2 > * {
-  border-radius:20px;
+.btn-del2>* {
+  border-radius: 20px;
 }
 
 .scroll-down-button {

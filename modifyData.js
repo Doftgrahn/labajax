@@ -30,7 +30,7 @@ $(document).ready(() => {
           let object = JSON.parse(data);
           if (object.status == 'success') {
             console.log('done here', object);
-            $('#outputmodify').append('<p>modification succeded</p>');
+            $('#deleteOutput').append('<p>modification succeded</p>');
           } else {
             console.log('Nothing is working');
             $('#outputmodify').append("<p>Didn't succed'</p>");
@@ -40,17 +40,11 @@ $(document).ready(() => {
         .fail(error => {
           console.log('error', 'testar igen!');
           modifySendRequest(numberOfTries - 1);
-
-
         })
         .always(always => {
           console.log('Will always return');
           modifyBookButton.prop('disabled', false);
-
         })
-
     };
-
   })
-
 });

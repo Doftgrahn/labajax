@@ -1,4 +1,4 @@
-const apiKey = 'ZCVqM';
+const apiKey = '4hp6W';
 const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
 
 
